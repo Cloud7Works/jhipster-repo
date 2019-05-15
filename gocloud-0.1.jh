@@ -1,0 +1,84 @@
+entity User{
+	companyName String,
+	firstName String,
+    lastName String,
+    cloudOrNot String,
+    userId String,
+    email String
+}
+entity Credential{
+	accountID String,
+    cloudProvider String,
+	secretKey String,
+    accessKey String,
+    region String,
+    userId String
+}
+entity CloudAssessment{
+	assessmentId String,
+	questionId String,
+    question String,
+    choice String
+    questionObjective String,
+    userSelection String,
+    userId String
+}
+
+entity CloudGovernance{
+    governanceId String,
+    userId String,
+    activeApps Integer,
+    inActiveApps Integer,
+    currentSpendAcross Integer,
+    estimatedSpendAcross Integer,
+    securityAlertsAcross String
+}
+
+entity CloudMigration{
+	userId	String,
+    cloudMigrationId String
+    //app Application,
+	//webApp	WebAppMigration,
+   // dbApp	DatabaseMigration
+}
+
+entity Application{
+	applicationId String,
+    type	ApplicationType,
+    gitUrl	String,
+    stackName	String,
+    environment	Environment
+}
+entity WebAppMigration{
+
+}
+entity DatabaseMigration{
+	dbName String,
+    dbUserName String,
+    dbPassWord String
+}
+enum ApplicationType {
+    WEB, DATABASE, BIGDATA
+}
+enum Environment {
+    DEV, SIT, CAT, PROD
+}
+relationship OneToMany {
+User{user} to Credential,
+User{user} to CloudGovernance
+}
+relationship OneToOne {
+User{user} to CloudAssessment
+}
+// Set pagination options
+paginate User with infinite-scroll
+paginate CloudMigration with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
