@@ -1,0 +1,14 @@
+{
+    "name": "WebAppMigration",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20190515103005",
+    "entityTableName": "web_app_migration",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

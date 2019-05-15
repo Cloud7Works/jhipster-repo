@@ -43,6 +43,14 @@ public class CacheConfiguration {
             createCache(cm, com.cloud7works.gocloud.domain.User.class.getName());
             createCache(cm, com.cloud7works.gocloud.domain.Authority.class.getName());
             createCache(cm, com.cloud7works.gocloud.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.cloud7works.gocloud.domain.GoCloudUser.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.Credential.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.CloudAssessment.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.CloudGovernance.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.CloudMigration.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.Application.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.WebAppMigration.class.getName());
+            createCache(cm, com.cloud7works.gocloud.domain.DatabaseMigration.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

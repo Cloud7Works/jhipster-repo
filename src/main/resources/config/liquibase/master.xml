@@ -11,6 +11,14 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515102959_added_entity_GoCloudUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103000_added_entity_Credential.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103001_added_entity_CloudAssessment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103002_added_entity_CloudGovernance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103003_added_entity_CloudMigration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103004_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103005_added_entity_WebAppMigration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103006_added_entity_DatabaseMigration.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
