@@ -1,0 +1,47 @@
+{
+  "generator-jhipster": {
+    "applicationType": "uaa",
+    "gitCompany": "",
+    "baseName": "GoCloudJ",
+    "packageName": "com.cloud7works.gocloud",
+    "packageFolder": "com/cloud7works/gocloud",
+    "serverPort": 7777,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": "true",
+    "messageBroker": "kafka",
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "hi",
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.0.1",
+    "jwtSecretKey": "Y2E3N2MyM2Q1YmQzMjNhMDgzNjhiNzYyNjA5YjUzZWNmMzE5YTFkNDFlZTY1YWRhYjVlYmE2NTMwZmE4NzM2NDA3ZDY5NzhlYjg3YWJhMDNhNGU3ODQ2YTNmMDQ2MDc2ZjEyMDQ3MWRmYjIyMzBiY2U3YmNmYzM5ZDFlMWM0ODc=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "skipClient": true
+  },
+  "git-provider": "GitHub",
+  "git-company": "Cloud7Works",
+  "repository-name": "jhipster-repo"
+}
