@@ -11,6 +11,17 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103109_added_entity_GoCloudUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103110_added_entity_Credential.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103111_added_entity_CloudAssessment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103112_added_entity_CloudGovernance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103113_added_entity_CloudMigration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103114_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103115_added_entity_WebAppMigration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103116_added_entity_DatabaseMigration.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190515103109_added_entity_constraints_GoCloudUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103110_added_entity_constraints_Credential.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190515103112_added_entity_constraints_CloudGovernance.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,50 @@
+{
+    "name": "CloudGovernance",
+    "fields": [
+        {
+            "fieldName": "governanceId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activeApps",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "inActiveApps",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "currentSpendAcross",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estimatedSpendAcross",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "securityAlertsAcross",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "goCloudUser",
+            "otherEntityName": "goCloudUser",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190515103112",
+    "entityTableName": "cloud_governance",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
