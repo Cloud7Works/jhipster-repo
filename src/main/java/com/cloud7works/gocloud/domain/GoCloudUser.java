@@ -49,15 +49,15 @@ public class GoCloudUser implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private CloudAssessment user;
+    private CloudAssessment assessment;
 
     @OneToMany(mappedBy = "goCloudUser")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Credential> users = new HashSet<>();
+    private Set<Credential> credentials = new HashSet<>();
 
     @OneToMany(mappedBy = "goCloudUser")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<CloudGovernance> users = new HashSet<>();
+    private Set<CloudGovernance> governances = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -146,67 +146,67 @@ public class GoCloudUser implements Serializable {
         this.email = email;
     }
 
-    public CloudAssessment getUser() {
-        return user;
+    public CloudAssessment getAssessment() {
+        return assessment;
     }
 
-    public GoCloudUser user(CloudAssessment cloudAssessment) {
-        this.user = cloudAssessment;
+    public GoCloudUser assessment(CloudAssessment cloudAssessment) {
+        this.assessment = cloudAssessment;
         return this;
     }
 
-    public void setUser(CloudAssessment cloudAssessment) {
-        this.user = cloudAssessment;
+    public void setAssessment(CloudAssessment cloudAssessment) {
+        this.assessment = cloudAssessment;
     }
 
-    public Set<Credential> getUsers() {
-        return users;
+    public Set<Credential> getCredentials() {
+        return credentials;
     }
 
-    public GoCloudUser users(Set<Credential> credentials) {
-        this.users = credentials;
+    public GoCloudUser credentials(Set<Credential> credentials) {
+        this.credentials = credentials;
         return this;
     }
 
-    public GoCloudUser addUser(Credential credential) {
-        this.users.add(credential);
+    public GoCloudUser addCredential(Credential credential) {
+        this.credentials.add(credential);
         credential.setGoCloudUser(this);
         return this;
     }
 
-    public GoCloudUser removeUser(Credential credential) {
-        this.users.remove(credential);
+    public GoCloudUser removeCredential(Credential credential) {
+        this.credentials.remove(credential);
         credential.setGoCloudUser(null);
         return this;
     }
 
-    public void setUsers(Set<Credential> credentials) {
-        this.users = credentials;
+    public void setCredentials(Set<Credential> credentials) {
+        this.credentials = credentials;
     }
 
-    public Set<CloudGovernance> getUsers() {
-        return users;
+    public Set<CloudGovernance> getGovernances() {
+        return governances;
     }
 
-    public GoCloudUser users(Set<CloudGovernance> cloudGovernances) {
-        this.users = cloudGovernances;
+    public GoCloudUser governances(Set<CloudGovernance> cloudGovernances) {
+        this.governances = cloudGovernances;
         return this;
     }
 
-    public GoCloudUser addUser(CloudGovernance cloudGovernance) {
-        this.users.add(cloudGovernance);
+    public GoCloudUser addGovernance(CloudGovernance cloudGovernance) {
+        this.governances.add(cloudGovernance);
         cloudGovernance.setGoCloudUser(this);
         return this;
     }
 
-    public GoCloudUser removeUser(CloudGovernance cloudGovernance) {
-        this.users.remove(cloudGovernance);
+    public GoCloudUser removeGovernance(CloudGovernance cloudGovernance) {
+        this.governances.remove(cloudGovernance);
         cloudGovernance.setGoCloudUser(null);
         return this;
     }
 
-    public void setUsers(Set<CloudGovernance> cloudGovernances) {
-        this.users = cloudGovernances;
+    public void setGovernances(Set<CloudGovernance> cloudGovernances) {
+        this.governances = cloudGovernances;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

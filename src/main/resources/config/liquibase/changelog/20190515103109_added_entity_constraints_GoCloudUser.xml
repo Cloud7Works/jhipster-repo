@@ -8,9 +8,9 @@
     -->
     <changeSet id="20190515103109-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="user_id"
+        <addForeignKeyConstraint baseColumnNames="assessment_id"
                                  baseTableName="go_cloud_user"
-                                 constraintName="fk_go_cloud_user_user_id"
+                                 constraintName="fk_go_cloud_user_assessment_id"
                                  referencedColumnNames="id"
                                  referencedTableName="cloud_assessment"/>
 
