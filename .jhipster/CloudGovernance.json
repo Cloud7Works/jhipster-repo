@@ -1,0 +1,43 @@
+{
+    "name": "CloudGovernance",
+    "fields": [
+        {
+            "fieldName": "governanceId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activeApps",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "inActiveApps",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "currentSpendAcross",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estimatedSpendAcross",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "securityAlertsAcross",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190515103002",
+    "entityTableName": "cloud_governance",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

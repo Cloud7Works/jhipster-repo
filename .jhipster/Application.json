@@ -1,0 +1,37 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "applicationId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ApplicationType",
+            "fieldValues": "WEB,DATABASE,BIGDATA"
+        },
+        {
+            "fieldName": "gitUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stackName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "environment",
+            "fieldType": "Environment",
+            "fieldValues": "DEV,SIT,CAT,PROD"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190515103004",
+    "entityTableName": "application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
