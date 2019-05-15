@@ -1,0 +1,60 @@
+{
+    "name": "GoCloudUser",
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cloudOrNot",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "cloudAssessment",
+            "otherEntityRelationshipName": "goCloudUser",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "credential",
+            "otherEntityRelationshipName": "goCloudUser",
+            "relationshipName": "user"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cloudGovernance",
+            "otherEntityRelationshipName": "goCloudUser",
+            "relationshipName": "user"
+        }
+    ],
+    "changelogDate": "20190515103109",
+    "entityTableName": "go_cloud_user",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,134 @@
+package com.cloud7works.gocloud.web.rest;
+
+import com.cloud7works.gocloud.domain.CloudAssessment;
+import com.cloud7works.gocloud.service.CloudAssessmentService;
+import com.cloud7works.gocloud.web.rest.errors.BadRequestAlertException;
+
+import io.github.jhipster.web.util.HeaderUtil;
+import io.github.jhipster.web.util.ResponseUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.StreamSupport;
+
+import static org.elasticsearch.index.query.QueryBuilders.*;
+
+/**
+ * REST controller for managing {@link com.cloud7works.gocloud.domain.CloudAssessment}.
+ */
+@RestController
+@RequestMapping("/api")
+public class CloudAssessmentResource {
+
+    private final Logger log = LoggerFactory.getLogger(CloudAssessmentResource.class);
+
+    private static final String ENTITY_NAME = "cloudAssessment";
+
+    @Value("${jhipster.clientApp.name}")
+    private String applicationName;
+
+    private final CloudAssessmentService cloudAssessmentService;
+
+    public CloudAssessmentResource(CloudAssessmentService cloudAssessmentService) {
+        this.cloudAssessmentService = cloudAssessmentService;
+    }
+
+    /**
+     * {@code POST  /cloud-assessments} : Create a new cloudAssessment.
+     *
+     * @param cloudAssessment the cloudAssessment to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new cloudAssessment, or with status {@code 400 (Bad Request)} if the cloudAssessment has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("/cloud-assessments")
+    public ResponseEntity<CloudAssessment> createCloudAssessment(@RequestBody CloudAssessment cloudAssessment) throws URISyntaxException {
+        log.debug("REST request to save CloudAssessment : {}", cloudAssessment);
+        if (cloudAssessment.getId() != null) {
+            throw new BadRequestAlertException("A new cloudAssessment cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        CloudAssessment result = cloudAssessmentService.save(cloudAssessment);
+        return ResponseEntity.created(new URI("/api/cloud-assessments/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+
+    /**
+     * {@code PUT  /cloud-assessments} : Updates an existing cloudAssessment.
+     *
+     * @param cloudAssessment the cloudAssessment to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated cloudAssessment,
+     * or with status {@code 400 (Bad Request)} if the cloudAssessment is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the cloudAssessment couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PutMapping("/cloud-assessments")
+    public ResponseEntity<CloudAssessment> updateCloudAssessment(@RequestBody CloudAssessment cloudAssessment) throws URISyntaxException {
+        log.debug("REST request to update CloudAssessment : {}", cloudAssessment);
+        if (cloudAssessment.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        CloudAssessment result = cloudAssessmentService.save(cloudAssessment);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, cloudAssessment.getId().toString()))
+            .body(result);
+    }
+
+    /**
+     * {@code GET  /cloud-assessments} : get all the cloudAssessments.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of cloudAssessments in body.
+     */
+    @GetMapping("/cloud-assessments")
+    public List<CloudAssessment> getAllCloudAssessments() {
+        log.debug("REST request to get all CloudAssessments");
+        return cloudAssessmentService.findAll();
+    }
+
+    /**
+     * {@code GET  /cloud-assessments/:id} : get the "id" cloudAssessment.
+     *
+     * @param id the id of the cloudAssessment to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the cloudAssessment, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/cloud-assessments/{id}")
+    public ResponseEntity<CloudAssessment> getCloudAssessment(@PathVariable Long id) {
+        log.debug("REST request to get CloudAssessment : {}", id);
+        Optional<CloudAssessment> cloudAssessment = cloudAssessmentService.findOne(id);
+        return ResponseUtil.wrapOrNotFound(cloudAssessment);
+    }
+
+    /**
+     * {@code DELETE  /cloud-assessments/:id} : delete the "id" cloudAssessment.
+     *
+     * @param id the id of the cloudAssessment to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping("/cloud-assessments/{id}")
+    public ResponseEntity<Void> deleteCloudAssessment(@PathVariable Long id) {
+        log.debug("REST request to delete CloudAssessment : {}", id);
+        cloudAssessmentService.delete(id);
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
+    }
+
+    /**
+     * {@code SEARCH  /_search/cloud-assessments?query=:query} : search for the cloudAssessment corresponding
+     * to the query.
+     *
+     * @param query the query of the cloudAssessment search.
+     * @return the result of the search.
+     */
+    @GetMapping("/_search/cloud-assessments")
+    public List<CloudAssessment> searchCloudAssessments(@RequestParam String query) {
+        log.debug("REST request to search CloudAssessments for query {}", query);
+        return cloudAssessmentService.search(query);
+    }
+
+}

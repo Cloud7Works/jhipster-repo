@@ -1,0 +1,43 @@
+{
+    "name": "CloudAssessment",
+    "fields": [
+        {
+            "fieldName": "assessmentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "question",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "choice",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionObjective",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userSelection",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190515103111",
+    "entityTableName": "cloud_assessment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
